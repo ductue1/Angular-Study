@@ -1,0 +1,48 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="card">
+        <span class="stdio">STDIO</span>
+        <span class="joker">JOKER</span>
+    </div>
+</body>
+</html>
+<style>
+    .card
+    {
+        width: 200px;
+        height: 300px;
+        background-color: #000000;
+        border: 1px solid;
+        text-align: center;
+        line-height: 300px;
+        font-size: 1.5em;
+        color: #FFFFFF;
+    }
+    .card .joker
+    {
+        display: none;
+    }
+    .card:hover
+    {
+        background-color: #FFFFFF;
+        color: #000000;
+        text-align: center;
+        line-height: 300px;
+        font-size: 1.5em;
+    }
+    .card:hover .stdio
+    {
+        display: none;
+    }
+    .card:hover .joker
+    {
+        display: inline;
+    }
+</style>
