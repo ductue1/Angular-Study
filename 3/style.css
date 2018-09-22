@@ -1,0 +1,96 @@
+body
+{
+    background-color: #e6e6e6;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btnAddCustomer
+{
+    width: 150px;
+    height: 40px;
+    color: grey;
+    background-color: white;
+    border: 1px solid grey;
+    text-align: center;
+}
+.btnPre
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    border: 1px #f2f2f2 inset;
+}
+.select
+{
+    height: 40px;
+    width: 150px;
+}
+#header
+{
+    background-color: #52a7f9;
+    height: 70px;
+    width: 1000px;
+}
+#footer
+{
+    background-color: #0365c0;
+    height: 50px;
+    width: 1000px;
+    line-height: 50px;
+}
+#mainContainer
+{
+    height: 500px;
+    width: 1000px;
+}
+#leftSidebar, #rightSidebar
+{
+    background-color: white;
+    width: 200px;
+    height: 500px;
+    float: left;
+}
+
+#container 
+{
+    float: left;
+}
+
+#main-content
+{
+    background-color: #6fc041;
+    height: 280px;
+    width: 400px;
+    float: left;
+}
+#sidebar
+{
+    background-color: #b36ae2;
+    height: 280px;
+    width: 200px;
+    float: left;
+}
+.twin
+{
+    background-color: #f3901a;
+    height: 220px;
+    width: 300px;
+    float: left;
+}
+#botron1
+{
+    background-color: #f3901a;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+    line-height: 200px;
+}
+#botron2
+{
+    background-color: #f3901a;
+    width: 20px;
+    height: 20px;
+}
