@@ -5,8 +5,18 @@ body
 #header
 {
     width: 100%;
-    height: 30px;
+    height: 50px;
     float: left;
+    margin-bottom: 20px;
+    
+}
+.fixscroll
+{
+    border-bottom: 2px solid #CCC;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
 }
 .center
 {
@@ -21,8 +31,28 @@ body
 }
 .logo, .sanpham, .lienhe, .quanly, .dangnhap
 {
-    float: left;
-    margin-right: 30px;
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #333;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+a:hover
+{
+    color: orange;
+    text-decoration: none;
+}
+.smalltext
+{
+    font-size: 1em;
+}
+.logo
+{
+    height: 50px;
+    width: 50px;
 }
 #menu
 {
@@ -41,6 +71,7 @@ body
 {
     width: 100%;
     height: 100%;
+    text-align: center;
 }
 .addToCart
 {
@@ -76,6 +107,10 @@ body
     border: 4px solid #ccc;
     width: 20%;
 }
+.smallImage:hover
+{
+    border: 4px solid orange;
+}
 hr
 {
     border: 2px solid #CCC;
@@ -90,6 +125,9 @@ hr
     float: left;
     width: 100%;
     background-color: #CCC;
+    padding: 20px 0;
+    font-size: 0.85em;
+    margin-top: 20px;
 }
 .left
 {
@@ -101,4 +139,106 @@ hr
     float: left;
     width: 750px;
     left: 30px;
+}
+.btnCart
+{
+    background-color: white;
+    border-top: #CCC 1px solid;
+    border-bottom: orange 3px solid;
+    border-radius: 30px;;
+    height: 30px;
+    width: auto;
+    line-height: 30px;
+    font-size: 0.85em;
+    text-align: center;
+    /* margin-top: 8px; */
+    padding: 1px 8px;
+    color: black;
+    float: right;
+}
+.btnCart:hover
+{
+    margin-top: 10px;
+    border-bottom: 1px solid #CCC;
+    color: black;
+}
+.board
+{
+    width: 100%;
+    background-color: white;
+}
+@media screen and (max-width : 640px)
+{
+    body
+    {
+        width: 100%;
+    }
+    .center
+    {
+        width: 100%;
+    }
+    .container-center
+    {
+        width: 90%;
+    }
+    #container
+    {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .btnCart
+    {
+        border-bottom: orange 2px solid;
+        border-radius: 20px;;
+        height: 20px;
+        width: auto;
+        line-height: 20px;
+        font-size: 0.6em;
+        padding: 1px 5px;
+        margin-top:5px;
+    }
+    .btnCart:hover
+    {
+        margin-top: 6px;
+        border-bottom: 1px solid #CCC;
+        color: black;
+    }
+    #menu
+    {
+        width: 100%;
+        text-align: center;
+    }
+    .logo
+    {
+        width: 25px;
+        height: 25px;
+    }
+    .sanpham, .lienhe, .quanly, .dangnhap
+    {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0.6em;
+    }
+    .addToCart
+    {
+        width: 60%;
+    }
+    .quantity
+    {
+        width: 20%;
+        margin-left: 10%;
+    }
+    .left
+    {
+        width: 100%;
+    }
+    .right
+    {
+        width: 100%;
+    }
+    #footer
+    {
+        padding: 20px 20px;
+    }
 }
