@@ -214,3 +214,11 @@ else
 {
     console.log(n + " is not a perfect number");
 }
+
+//Bai 16
+var n = 12341;
+var s = 0;
+while(n != 0)
+{
+    
+}

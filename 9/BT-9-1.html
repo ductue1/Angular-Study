@@ -1,0 +1,149 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- <img id="start" src="arduino-uno-r3-1523810803469.jpg"> -->
+    <!-- <div id="start">
+        <p>Text</p>
+        Test
+        <div class="hover">
+
+        </div>
+    </div> -->
+</body>
+</html>
+<style>
+    #start
+    {
+        border: 2px solid green;
+    }
+    #hover
+    {
+        border: 2px solid red;
+    }
+    #hover2
+    {
+        border: 2px solid blue;
+    }
+    #hover3
+    {
+        border: 2px solid violet;
+    }
+    #banco
+    {
+        width: 416;
+        height: 416;
+        border: 1px solid black;
+    }
+    .obanco
+    {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        float: left;
+        margin: 0 auto;
+    }
+    .cot
+    {
+        width: 20px;
+        margin-right: 5px;
+        background-color: pink;
+    }
+    #rotate
+    {
+        transform: rotateX( 180deg);
+    }
+    .khung
+    {
+        width: 1500px;
+        height: 500px;
+    }
+    .card
+    {
+        width: 400px;
+        height: 450px;
+        margin-right: 50px;
+    }
+</style>
+<script>
+    function removeFloat()
+    {
+        var div = document.createElement(`div`);
+        div.style.clear = `both`;
+        return div;
+    }
+
+    // var x = document.getElementById("start");
+    // x.addEventListener(`click`, function(){
+    //     x.setAttribute(`id`, `hover`);
+    // })
+    // x.addEventListener(`mouseover`, function(){
+    //     x.setAttribute(`id`, `hover2`);
+    // })
+    // x.addEventListener(`mouseout`, function(){
+    //     x.setAttribute(`id`, `hover3`);
+    // })
+
+    //Element
+    // var new_div = document.createElement(`div`);
+    // new_div.style.width = 300;
+    // new_div.style.height = 200;
+    // new_div.style.top = 100;
+    // new_div.style.left = 50;
+    // new_div.style.backgroundColor = "#FF8800";
+    // document.body.appendChild(new_div);
+
+    // for(var i = 1; i <= 10; i++)
+    // {
+    //     var newdiv = document.createElement(`div`);
+    //     newdiv.style.width = 50;
+    //     newdiv.style.height = 50;
+    //     newdiv.style.marginRight = 10;
+    //     newdiv.style.float = "left";
+    //     newdiv.style.backgroundColor = "#80d4ff";
+    //     document.body.appendChild(newdiv);
+    // }
+
+    var banco = document.createElement(`div`);
+    banco.id = `banco`;
+    document.body.appendChild(banco);
+
+    for(var i = 1; i <= 8; i++)
+    {
+        for(var j = 1; j <= 8; j++)
+        {
+            var obanco = document.createElement(`div`);
+            obanco.className = `obanco`;
+            document.getElementById(`banco`).appendChild(obanco);
+        }
+        var div = removeFloat();
+        document.getElementById(`banco`).appendChild(div);
+    }
+
+    var a = [10, 20, 50, 30 , 80];
+    var div = document.createElement(`div`);
+    div.id = `rotate`;
+    div.style.marginTop = 100;
+    document.body.appendChild(div);
+    for(var i = 0; i < a.length; i++)
+    {
+        var cot = document.createElement(`div`);
+        cot.className = `cot`;
+        cot.style.height = a[i];
+        cot.style.cssFloat = `left`;
+        document.getElementById(`rotate`).appendChild(cot);
+    }
+
+    document.body.appendChild(document.createElement("br"));
+
+    var div = document.createElement(`div`);
+    div.className = `khung`;
+    document.body.appendChild(div);
+
+    var card = document.createElement(`card`);
+</script>
