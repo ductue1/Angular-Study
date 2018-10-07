@@ -58,7 +58,7 @@
     {
         transform: rotateX( 180deg);
     }
-    .khung
+    #khung
     {
         width: 1500px;
         height: 500px;
@@ -68,6 +68,12 @@
         width: 400px;
         height: 450px;
         margin-right: 50px;
+        background-color: black;
+        float: left;
+    }
+    #cardhover
+    {
+        background-color: green;
     }
 </style>
 <script>
@@ -142,8 +148,27 @@
     document.body.appendChild(document.createElement("br"));
 
     var div = document.createElement(`div`);
-    div.className = `khung`;
+    div.id = `khung`;
     document.body.appendChild(div);
 
-    var card = document.createElement(`card`);
+    for(var i = 0; i <= 2; i++)
+    {
+        var card = document.createElement(`div`);
+        card.className = `card`;
+        card.onmouseover = function()
+        {
+            card.style.backgroundColor = "green";
+        }
+        card.onmouseleave = function()
+        {
+            card.style.backgroundColor = "black";
+        }
+        // card.addEventListener(`mouseover`, function(){
+        //     card.style.backgroundColor = "green";
+        // });
+        // card.addEventListener(`mouseout`, function(){
+        //     card.style.backgroundColor = "black";
+        // });
+        document.getElementById(`khung`).appendChild(card);
+    }
 </script>
