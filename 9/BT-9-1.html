@@ -50,13 +50,18 @@
     }
     .cot
     {
-        width: 20px;
-        margin-right: 5px;
+        width: 50px;
         background-color: pink;
+        position: absolute;
     }
-    #rotate
+    #khungbieudo
     {
-        transform: rotateX( 180deg);
+        width: 1000px;
+        height: 800px;
+        border: 1px solid black;
+        margin-top: 100px;
+        position: relative;
+        padding-bottom: 1px;
     }
     #khung
     {
@@ -68,9 +73,21 @@
         width: 400px;
         height: 450px;
         margin-right: 50px;
-        background-color: black;
+        background-color: white;
         float: left;
+        border: 1px solid grey;
     }
+    .card-opened
+    {
+        transition-property: transform, background-color;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+        transform: rotateY(180deg);
+    }
+    /* .card:hover
+    {
+        background-color: green;
+    } */
     #cardhover
     {
         background-color: green;
@@ -131,44 +148,92 @@
         document.getElementById(`banco`).appendChild(div);
     }
 
-    var a = [10, 20, 50, 30 , 80];
+    var a = [80, 90, 70, 50, 42, 38];
+    var tongdodai = 50;
     var div = document.createElement(`div`);
-    div.id = `rotate`;
-    div.style.marginTop = 100;
+    div.id = `khungbieudo`;
     document.body.appendChild(div);
     for(var i = 0; i < a.length; i++)
     {
         var cot = document.createElement(`div`);
         cot.className = `cot`;
-        cot.style.height = a[i];
-        cot.style.cssFloat = `left`;
-        document.getElementById(`rotate`).appendChild(cot);
+        cot.style.width = 50;
+        cot.style.height = document.getElementById(`khungbieudo`).offsetHeight * a[i] / 100;
+        cot.style.left = tongdodai;
+        cot.style.top = document.getElementById(`khungbieudo`).offsetHeight - parseInt(cot.style.height);
+        cot.style.marginBottom = "1px";
+        tongdodai += 100;
+        document.getElementById(`khungbieudo`).appendChild(cot);
     }
 
     document.body.appendChild(document.createElement("br"));
 
+    // var div = document.createElement(`div`);
+    // div.id = `khung`;
+    // document.body.appendChild(div);
+
+    // for(var i = 0; i <= 2; i++)
+    // {
+    //     let card = document.createElement(`div`);
+    //     card.className = `card`;
+    //     document.getElementById(`khung`).appendChild(card);
+    //     card.addEventListener(`mouseover`,function(){
+    //         card.style.backgroundColor = "green";
+    //     });
+    //     card.addEventListener(`mouseout`, function(){
+    //         card.style.backgroundColor = "black";
+    //     });
+    // }
+
+    let color = ["black", "green", "blue", "pink", "violet"];
+    let arr = [];
     var div = document.createElement(`div`);
     div.id = `khung`;
     document.body.appendChild(div);
-
-    for(var i = 0; i <= 2; i++)
+    for(let i = 0; i <= 2; i++)
     {
-        var card = document.createElement(`div`);
+        let card = document.createElement(`div`);
         card.className = `card`;
-        card.onmouseover = function()
-        {
-            card.style.backgroundColor = "green";
-        }
-        card.onmouseleave = function()
-        {
-            card.style.backgroundColor = "black";
-        }
-        // card.addEventListener(`mouseover`, function(){
-        //     card.style.backgroundColor = "green";
-        // });
-        // card.addEventListener(`mouseout`, function(){
-        //     card.style.backgroundColor = "black";
-        // });
         document.getElementById(`khung`).appendChild(card);
+        card.addEventListener(`click`, function(){
+            card.style.backgroundColor = color[Math.floor(Math.random() * color.length)];
+            card.className += " card-opened";
+            arr.push(card.style.backgroundColor.toString());
+            if(arr.length > 1)
+            {
+                let check = Compare(arr);
+                if(check == true)
+                {
+                    setTimeout(function(){
+                        alert("WIN");
+                    }, 1000);
+                }
+                else
+                {
+                    if(arr.length == 3)
+                    {
+                        
+                    setTimeout(function(){
+                        alert("LOSE");
+                    }, 1000);
+                    }
+                }
+            }
+        });
+    }
+
+    function Compare(arr)
+    {
+        for(let i = 0; i < arr.length - 1; i++)
+        {
+            for(let j = i + 1; j < arr.length; j++)
+            {
+                if(arr[i] == arr[j])
+                {   
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 </script>
