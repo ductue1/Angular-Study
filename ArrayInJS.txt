@@ -1,0 +1,6 @@
+forEach
+Join
+Push
+Pop
+Slice
+Filter
