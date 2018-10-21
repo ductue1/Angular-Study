@@ -1,9 +1,12 @@
 //Biến
-let luotdi = 0;
+let luotdi = 1; //1 = white_chess, 2 = black_chess
 let tongdong = 10;
 let tongcot = 10;
+let currentcolumn = -1;
+let currentrow = -1;
 //Lưu hướng đi [dòng, cột]
 let directions = ['-1,-1', '-1,0', '-1,1', '0,-1', '0,1', '1,-1', '1,0', '1,1'];
+let arr = new Array(tongdong); //0 = no_chess, 1 = white_chess, 2 = black_chess
 
 window.trangthai =
 {
@@ -23,44 +26,97 @@ function TaoBanCo()
 {
     let banco = document.createElement(`div`);
     banco.id = `banco`;
-    console.log(document.body)
     document.body.appendChild(banco);
-    for(let i = 1; i <= tongdong; i++)
+    for(let i = 0; i < tongdong; i++)
     {
-        for(let j = 1; j <= tongcot; j++)
+        arr[i] = new Array(tongcot);
+        for(let j = 0; j < tongcot; j++)
         {
+            //Mảng
+            arr[i][j] = 0;
             //Ô bàn cờ
             let obanco = document.createElement(`div`);
             obanco.className = `obanco`;
             obanco.id = 'd' + i + 'c' + j;
+            obanco.style.backgroundImage = "url('" + window.trangthai.no_chess + "')";
             document.getElementById(`banco`).appendChild(obanco);
             //Add event
             obanco.addEventListener(`click`, function(){
-                if(this.style.backgroundImage == "")
+                GetPosition(this);
+                if(arr[currentrow][currentcolumn] == 0 )
                 {
-                    DoiTrangThai(this);
-                    KiemTra(this);
-                    luotdi == 1 ? luotdi = 0 : luotdi = 1;
+                    DoiTrangThai();
+                    KiemTra();
+                    luotdi == 1 ? luotdi = 2 : luotdi = 1;
                 }
-            })
+            });
+            obanco.addEventListener(`mouseenter`, function(){
+                GetHoverMouseEnter(this);
+            });
+            obanco.addEventListener(`mouseout`, function(){
+                GetHoverMouseOut(this);
+            });
         }
         let div = removeFloat();
         document.getElementById(`banco`).appendChild(div);
     }
 }
 
-function DoiTrangThai(obanco)
+function GetHoverMouseOut(obanco)
 {
-    if(luotdi == 0)
+    //Lấy dòng && cột
+    let dong = parseInt(obanco.id.substring(1, obanco.id.indexOf('c')));
+    let cot = parseInt(obanco.id.substring(obanco.id.indexOf('c') + 1, obanco.id.length));
+
+    //Kiểm tra
+    if(arr[dong][cot] == 0)
     {
-        obanco.style.backgroundImage = "url('" + window.trangthai.white_chess + "')";
-        //luotdi += 1;
+        document.getElementById(`d${dong}c${cot}`).style.backgroundImage = "url('" + window.trangthai.no_chess + "')";
     }
+}
+
+function GetHoverMouseEnter(obanco)
+{
+    //Lấy dòng && cột
+    let dong = parseInt(obanco.id.substring(1, obanco.id.indexOf('c')));
+    let cot = parseInt(obanco.id.substring(obanco.id.indexOf('c') + 1, obanco.id.length));
+
+    //Kiểm tra
+    if(arr[dong][cot] == 0)
+    {
+        if(luotdi == 1)
+            document.getElementById(`d${dong}c${cot}`).style.backgroundImage = "url('" + window.trangthai.white_chess + "')";
+        else
+            document.getElementById(`d${dong}c${cot}`).style.backgroundImage = "url('" + window.trangthai.black_chess + "')";
+    }
+}
+
+function GetPosition(obanco)
+{
+    //Lấy dòng && cột
+    let dong = parseInt(obanco.id.substring(1, obanco.id.indexOf('c')));
+    let cot = parseInt(obanco.id.substring(obanco.id.indexOf('c') + 1, obanco.id.length));
+    //
+    currentcolumn = cot;
+    currentrow = dong;
+}
+
+function DoiTrangThai()
+{
+    arr[currentrow][currentcolumn] = luotdi;
+    //đổi background
+    if(luotdi == 1)
+        document.getElementById(`d${currentrow}c${currentcolumn}`).style.backgroundImage = "url('" + window.trangthai.white_chess + "')";
     else
-    {
-        obanco.style.backgroundImage = "url('" + window.trangthai.black_chess + "')";
-        //luotdi++;
-    }
+        document.getElementById(`d${currentrow}c${currentcolumn}`).style.backgroundImage = "url('" + window.trangthai.black_chess + "')";
+}
+
+function DoiMau(i, j, luotdi)
+{
+    if(luotdi == 1)
+        document.getElementById(`d${i}c${j}`).style.backgroundImage = "url('" + window.trangthai.white_chess + "')";
+    else
+        document.getElementById(`d${i}c${j}`).style.backgroundImage = "url('" + window.trangthai.black_chess + "')";
 }
 
 function KiemTraDong(obanco)
@@ -123,29 +179,51 @@ function KiemTraDong(obanco)
     }
 }
 
-function KiemTra(obanco)
+function KiemTra()
 {
-    //Lấy dòng && cột
-    let dong = parseInt(obanco.id.substring(1, obanco.id.indexOf('c')));
-    let cot = parseInt(obanco.id.substring(obanco.id.indexOf('c') + 1, obanco.id.length));
-
     //Chạy theo hướng của mảng
     directions.forEach(function(item){
         let x = parseInt(item.substring(0, item.indexOf(',')));
-        console.log(x);
         let y = parseInt(item.substring(item.indexOf(',') + 1, item.length));
-    });
-}
 
-function DoiMau(obanco)
-{
-    if(luotdi == 0)
-    {
-        console.log(obanco);
-        obanco.style.backgroundImage = "url('" + window.trangthai.white_chess + "')";
-        console.log(obanco);
-    }
-        
-    else
-        obanco.style.backgroundImage = "url('" + window.trangthai.black_chess + "')";
+        let i = currentrow;
+        let j = currentcolumn;
+        let luotditemp = luotdi == 1 ? 2 : 1;
+        let count = 0;
+
+        i += x;
+        j += y;
+        while(i >= 0 && j >= 0 && i <= parseInt(tongdong - 1) && j <= parseInt(tongcot - 1))
+        {
+            if(arr[i][j] == 0)
+            {
+                break;
+            }
+
+            if(arr[i][j] == luotdi && count == 0)
+            {
+                break;
+            }
+
+            if(arr[i][j] == luotditemp)
+            {
+                count++;
+            }
+
+            if(arr[i][j] == luotdi && count != 0)
+            {
+                //Chạy ngược
+                while(i != currentrow || j != currentcolumn)
+                {
+                    i -= x;
+                    j -= y;
+                    arr[i][j] = luotdi;
+                    DoiMau(i, j, luotdi);
+                }
+                break;
+            }
+            i += x;
+            j += y;
+        }
+    });
 }
