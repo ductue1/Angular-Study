@@ -20,7 +20,7 @@ body
 }
 .center
 {
-    width: 1100px;
+    width: 60%;
     margin: 0 auto;
     line-height: 100%;
 }
@@ -243,7 +243,22 @@ hr
     }
 }
 
+#sanphammoinhat
+{
+    margin-top: 50px;
+}
+
 .format-sanphambanchay
+{
+    font-size: 1em;
+    color: #fff;
+    background-color: #f80;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 12px;
+}
+
+.format-sanphammoinhat
 {
     font-size: 1em;
     color: #fff;
@@ -256,6 +271,13 @@ hr
 .body-sanphambanchay
 {
     width: 100%;
+    display: table;
+}
+
+.body-sanphammoinhat
+{
+    width: 100%;
+    display: table;
 }
 
 .sanpham-sanphambanchay
@@ -264,10 +286,41 @@ hr
     border: 1px solid #f2f2f2;
     float: left;
     margin-right: 20px;
-    width: 45%;
+    width: calc((100% - 4px - 20px)/2 - 5px);
+}
+
+.sanpham-sanphambanchay2
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: right;
+    /* width: 45%; */
+    width: calc((100% - 4px - 20px)/2 - 5px);
+}
+
+.sanpham-sanphammoinhat
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: left;
+    margin-right: 20px;
+    width: calc((100% - 8px - 60px)/4);
+}
+
+.sanpham-sanphammoinhat2
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: left;
+    width: calc((100% - 8px - 60px)/4);
 }
 
 .sanpham-sanphambanchay:hover
+{
+    border-color: #f80;
+}
+
+.sanpham-sanphammoinhat:hover
 {
     border-color: #f80;
 }
@@ -276,6 +329,12 @@ hr
 {
     width: 100%;
 }
+
+.img-sanphammoinhat
+{
+    width: 100%;
+}
+
 
 .ten-sanphambanchay
 {
@@ -286,7 +345,23 @@ hr
     font-weight: bold;
 }
 
+.ten-sanphammoinhat
+{
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
 .gia-sanphambanchay
+{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.gia-sanphammoinhat
 {
     width: 100%;
     height: 30px;
