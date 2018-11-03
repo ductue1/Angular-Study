@@ -1,0 +1,121 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <div class="fixscroll">
+            <div class="center">
+                <img src="electronics_logo.svg" alt="logo" class="logo" style="float: left;">
+                <a class="sanpham" href="#">SẢN PHẨM <i class="material-icons smalltext">arrow_drop_down</i></a>
+                <a class="lienhe" href="#"><i class="material-icons smalltext">email</i> LIÊN HỆ</a>
+                <a class="quanly" href="#"><i class="material-icons smalltext">settings</i> QUẢN LÝ</a>
+                <a class="dangnhap" href="#"><i class="material-icons smalltext">account_circle</i> ĐĂNG NHẬP</a>
+                <a class="btnCart" href="#"><i class="material-icons smalltext">shopping_cart</i> Xem giỏ hàng</a>
+            </div>
+        </div>
+    </div>
+    <div id="maincontainer">
+        <div class="center">
+            <div id="menu">
+                <h2 id="name"> </h2>
+                <p id="price"> </p>
+                <div class="quantity"><input class="soluong" type="number" value="1"></div>
+                <div class="addToCart">THÊM VÀO GIỎ</div>
+                <div style="clear: both"></div>
+                <br><br>
+                <hr class="line">
+                Liên hệ đặt hàng trực tiếp - 028.36205514
+            </div>
+            <div id="container">
+                <div class="container-center">
+                    <div id="thumbnails">
+                        
+                    </div>
+                    <br>
+                    <div id="screenshots">
+                        
+                    </div>
+                    <div style="clear: both;"></div>
+                    <hr><br>
+                    <div class="title">
+                        MÔ TẢ
+                    </div>
+                    <br>
+                    <div class="content" id="description">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="center">
+            <div class="left">
+                <p>STDIO Electronics được bảo hộ bởi ©STDIO </p>
+                <p>2013-2018</p>
+            </div>
+            <div class="right">
+                <p style="font-weight: bold">LIÊN KẾT</p>
+                <p style="color: orange">STDIO</p>
+                <p style="color: orange">STDIO Solutions</p>
+                <p style="font-weight: bold">CỘNG ĐỒNG</p>
+                <p style="color: orange">STDIO Electronics Fanpage</p>
+                <p style="color: orange">STDIO Electronics Group</p>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    window.onload = loadDoc
+    function loadDoc()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                let obj = JSON.parse(this.responseText);
+                let price = (obj.price).toLocaleString('vi-VI', {
+                                                        style: 'currency',
+                                                        currency: 'VND',
+                                                        });
+                let thumbnail = 'https://storage.stdio.vn/vn.stdio.electronics' + obj.thumbnails;
+                let numberofScreenshots = obj.screenshots.length;
+                //let screenshots = "";
+                for(let i = 0; i < numberofScreenshots; i++)
+                {
+                    let div = document.createElement(`img`);
+                    div.className = `smallImage`;
+                    div.src = `https://storage.stdio.vn/vn.stdio.electronics${obj.screenshots[i]}`;
+                    div.addEventListener(`click`, function(){
+                        $("#thumbnails").html(`<img src="${this.src}" alt="arduino" class="mainImage">`);
+                    });
+                    document.getElementById(`screenshots`).appendChild(div);
+                }
+                
+                $("#name").html(obj.title);
+                $("#price").html(price);
+                $("#thumbnails").html(`<img src="${thumbnail}" alt="arduino" class="mainImage">`);
+                $("#description").html(obj.content);
+            }
+        };
+        xhttp.open("GET", "https://apps.stdio.vn/vn.stdio.electronics/products/product?id=1", true);
+        xhttp.send();
+    }
+
+    function getMainImage()
+    {
+
+    }
+</script>
