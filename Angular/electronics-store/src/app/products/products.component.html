@@ -1,0 +1,36 @@
+<div id="maincontainer">
+  <div class="center">
+      <div id="menu">
+          <h2 id="name"> {{ product.title }} </h2>
+          <p id="price"> {{ product.price }} </p>
+          <div class="quantity"><input class="soluong" type="number" value="1"></div>
+          <div class="addToCart">THÊM VÀO GIỎ</div>
+          <div style="clear: both"></div>
+          <br><br>
+          <hr class="line">
+          Liên hệ đặt hàng trực tiếp - 028.36205514
+      </div>
+      <div id="container">
+          <div class="container-center">
+              <div id="thumbnails">
+                  <img *ngFor="let thumbnail of product.thumbnails"  src="https://storage.stdio.vn/vn.stdio.electronics{{thumbnail}}" >
+              </div>
+              <br>
+              <div id="screenshots">
+                  
+              </div>
+              <div style="clear: both;"></div>
+              <hr><br>
+              <div class="title">
+                  MÔ TẢ
+              </div>
+              <br>
+              <div class="content" id="description">
+                  {{ product.description }}
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- <p>{{product | json}}</p> -->

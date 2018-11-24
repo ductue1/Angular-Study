@@ -1,0 +1,67 @@
+<div id="header">
+    <div class="fixscroll">
+        <div class="center">
+            <a class="trangchu" [routerLink]="['/index']"><img src="/assets/electronics_logo.svg" alt="logo" class="logo" style="float: left;"></a>
+            <div class="menu">
+                <div class="sp">
+                    <a class="sanpham" (click)="OnClickSanPham();">SẢN PHẨM <i class="material-icons smalltext">arrow_drop_down</i></a>
+                    <div class="sanpham-content" *ngIf="showPopup">
+                        <div class="sanpham-content-danhmucsanpham">
+                            <p>COMPONENTS</p>
+                            <p>STDIO KIT</p>
+                            <p>ARDUINO</p>
+                            <p>OTHER</p>
+                        </div>
+                        <div class="sanpham-content-sanphammoinhat">
+                            <h5>SẢN PHẨM MỚI NHẤT</h5>
+                            <hr>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                        </div>
+                        <div class="sanpham-content-sanphamtieubieu">
+                            <h5>SẢN PHẨM TIÊU BIỂU</h5>
+                            <hr>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <img class="sanpham-content-spmoinhat" src="/assets/arduino-uno-r3-1523810803469.jpg" alt="hinh">
+                            <div class="sanpham-content-spmoinhat-content">
+                                <p>STDIO Starter Kit</p>
+                                <p>340.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lh"><a class="lienhe" [routerLink]="['/contact']"><i class="material-icons smalltext">email</i> LIÊN HỆ</a></div>
+                <div class="ql"><a class="quanly" href="#"><i class="material-icons smalltext">settings</i> QUẢN LÝ</a></div>
+                <div class="dn"><a class="dangnhap" href="#"><i class="material-icons smalltext">account_circle</i> ĐĂNG NHẬP</a></div>
+                <div class="cart"><a class="btnCart" routerLink="/cart"><i class="material-icons smalltext">shopping_cart</i> Xem giỏ hàng</a></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div id="maincontainer">
+    <div id="sanphambanchay" class="center">
+        <div class="header-sanphambanchay">
+            <span class="format-sanphambanchay">SẢN PHẦM BÁN CHẠY</span>
+        </div>
+        <div style="clear: both"></div>
+        <div class="body-sanphambanchay">
+            <div *ngFor="let product of products" class="sanpham-sanphambanchay2">
+                <img class="img-sanphambanchay" src="https://storage.stdio.vn/vn.stdio.electronics{{product.thumbnails[0]}}" alt="hinh">
+                <div class="ten-sanphambanchay">
+                    <a routerLink="/products/{{product.id}}">{{product.title}}</a>
+                </div>
+                <div class="gia-sanphambanchay">
+                    <p>{{product.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

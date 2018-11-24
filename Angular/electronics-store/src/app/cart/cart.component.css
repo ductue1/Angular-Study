@@ -1,0 +1,39 @@
+.contact-info{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-title{
+    width: 100%;
+    color: #999;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.span-input{
+    width: 50px;
+}
+
+.i-input{
+    width: 100%;
+}
+
+.input-group-content
+{
+    width: 50%;
+    display: table;
+    float: left;
+    padding: 5px;
+}
+
+.btn-color{
+    background-color: #f80;
+    border: solid 1px grey;
+}
+
+.content-center{
+    margin: 0 auto;
+    text-align: center;
+}

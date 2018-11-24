@@ -1,0 +1,415 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#header
+{
+    width: 100%;
+    height: 50px;
+    float: left;
+    margin-bottom: 20px;
+    
+}
+.fixscroll
+{
+    border-bottom: 2px solid #CCC;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+}
+.center
+{
+    width: 60%;
+    margin: 0 auto;
+    line-height: 100%;
+}
+.container-center
+{
+    width: 700px;
+    margin: 0 auto;
+}
+.logo, .sanpham, .lienhe, .quanly, .dangnhap
+{
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #333;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+a:hover
+{
+    color: orange;
+    text-decoration: none;
+}
+.smalltext
+{
+    font-size: 1em;
+}
+.logo
+{
+    height: 50px;
+    width: 50px;
+}
+#menu
+{
+    float: left;
+    width: 300px;
+}
+.quantity
+{
+    border: 1px solid orange;
+    width: 60px;
+    height: 30px;
+    float: left;
+    color: orange;
+}
+.soluong
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.addToCart
+{
+    float: left;
+    width: 180px;
+    height: 30px;
+    background-color: orange;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid orange;
+}
+.maincontainer
+{
+    float: left;
+    width: 100%;
+}
+#container
+{
+    float: left;
+    width: 750px;
+    left: 30px;
+}
+.mainImage
+{
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.smallImage
+{
+    float: left;
+    margin-right: 20px;
+    border: 4px solid #ccc;
+    width: 20%;
+}
+.smallImage:hover
+{
+    border: 4px solid orange;
+}
+hr
+{
+    border: 2px solid #CCC;
+}
+.title
+{
+    font-size: 1.7em;
+    color: #CCC;
+}
+#footer
+{
+    float: left;
+    width: 100%;
+    background-color: #CCC;
+    padding: 20px 0;
+    font-size: 0.85em;
+    margin-top: 20px;
+}
+.left
+{
+    float: left;
+    width: 300px;
+}
+.right
+{
+    float: left;
+    width: 750px;
+    left: 30px;
+}
+.btnCart
+{
+    background-color: white;
+    border-top: #CCC 1px solid;
+    border-bottom: orange 3px solid;
+    border-radius: 30px;;
+    height: 30px;
+    width: auto;
+    line-height: 30px;
+    font-size: 0.85em;
+    text-align: center;
+    /* margin-top: 8px; */
+    padding: 1px 8px;
+    color: black;
+    float: right;
+}
+.btnCart:hover
+{
+    margin-top: 10px;
+    border-bottom: 1px solid #CCC;
+    color: black;
+}
+.board
+{
+    width: 100%;
+    background-color: white;
+}
+@media screen and (max-width : 640px)
+{
+    body
+    {
+        width: 100%;
+    }
+    .center
+    {
+        width: 100%;
+    }
+    .container-center
+    {
+        width: 90%;
+    }
+    #container
+    {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .btnCart
+    {
+        border-bottom: orange 2px solid;
+        border-radius: 20px;;
+        height: 20px;
+        width: auto;
+        line-height: 20px;
+        font-size: 0.6em;
+        padding: 1px 5px;
+        margin-top:5px;
+    }
+    .btnCart:hover
+    {
+        margin-top: 6px;
+        border-bottom: 1px solid #CCC;
+        color: black;
+    }
+    #menu
+    {
+        width: 100%;
+        text-align: center;
+    }
+    .logo
+    {
+        width: 25px;
+        height: 25px;
+    }
+    .sanpham, .lienhe, .quanly, .dangnhap
+    {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 0.6em;
+    }
+    .addToCart
+    {
+        width: 60%;
+    }
+    .quantity
+    {
+        width: 20%;
+        margin-left: 10%;
+    }
+    .left
+    {
+        width: 100%;
+    }
+    .right
+    {
+        width: 100%;
+    }
+    #footer
+    {
+        padding: 20px 20px;
+    }
+}
+
+#sanphammoinhat
+{
+    margin-top: 50px;
+}
+
+.format-sanphambanchay
+{
+    font-size: 1em;
+    color: #fff;
+    background-color: #f80;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 12px;
+}
+
+.format-sanphammoinhat
+{
+    font-size: 1em;
+    color: #fff;
+    background-color: #f80;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 12px;
+}
+
+.body-sanphambanchay
+{
+    width: 100%;
+    display: table;
+}
+
+.body-sanphammoinhat
+{
+    width: 100%;
+    display: table;
+}
+
+.sanpham-sanphambanchay
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: left;
+    margin-right: 20px;
+    width: calc((100% - 4px - 20px)/2 - 5px);
+}
+
+.sanpham-sanphambanchay2
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: right;
+    /* width: 45%; */
+    width: calc((100% - 4px - 20px)/2 - 5px);
+}
+
+.sanpham-sanphammoinhat
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: left;
+    margin-right: 20px;
+    width: calc((100% - 8px - 60px)/4);
+}
+
+.sanpham-sanphammoinhat2
+{
+    margin-top: 20px;
+    border: 1px solid #f2f2f2;
+    float: left;
+    width: calc((100% - 8px - 60px)/4);
+}
+
+.sanpham-sanphambanchay:hover
+{
+    border-color: #f80;
+}
+
+.sanpham-sanphammoinhat:hover
+{
+    border-color: #f80;
+}
+
+.img-sanphambanchay
+{
+    width: 100%;
+}
+
+.img-sanphammoinhat
+{
+    width: 100%;
+}
+
+
+.ten-sanphambanchay
+{
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.ten-sanphammoinhat
+{
+    width: 100%;
+    background-color: #d9d9d9;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.gia-sanphambanchay
+{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.gia-sanphammoinhat
+{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.sanpham-content
+{
+    width: 100%;
+}
+
+.sanpham-content-danhmucsanpham
+{
+    float: left;
+    width: 50%;
+}
+
+.sanpham-content-sanphammoinhat
+{
+    float: left;
+    width: calc(25% - 41px);
+    border-left: 1px solid;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.sanpham-content-sanphamtieubieu
+{
+    float: left;
+    width: calc(25% - 41px);
+    border-left: 1px solid;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.sanpham-content-spmoinhat
+{
+    float: left;
+    width: 100px;
+    height: 70px;
+}
+
+.sanpham-content-spmoinhat-content
+{
+    float: left;
+}
+
+.sp, .lh, .ql, .dn, .cart
+{
+    display: inline;
+}

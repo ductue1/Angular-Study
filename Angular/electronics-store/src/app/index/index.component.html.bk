@@ -1,0 +1,71 @@
+<div id="maincontainer">
+  <div id="sanphambanchay" class="center">
+      <div class="header-sanphambanchay">
+          <span class="format-sanphambanchay">SẢN PHẦM BÁN CHẠY</span>
+      </div>
+      <div style="clear: both"></div>
+      <div class="body-sanphambanchay">
+          <div class="sanpham-sanphambanchay2">
+              <img class="img-sanphambanchay" src="https://storage.stdio.vn/vn.stdio.electronics{{products[0].thumbnails}}" alt="hinh">
+              <div class="ten-sanphambanchay">
+                  <p>{{products[0].title}}</p>
+              </div>
+              <div class="gia-sanphambanchay">
+                  <p>{{products[0].price}}</p>
+              </div>
+          </div>
+          <div class="sanpham-sanphambanchay">
+              <img class="img-sanphambanchay" src="https://storage.stdio.vn/vn.stdio.electronics{{products[1].thumbnails}}" alt="hinh">
+              <div class="ten-sanphambanchay">
+                  <p>{{products[1].title}}</p>
+              </div>
+              <div class="gia-sanphambanchay">
+                  <p>{{products[1].price}}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div style="clear: both;"></div>
+  <div id="sanphammoinhat" class="center">
+      <div class="header-sanphammoinhat">
+          <span class="format-sanphammoinhat">SẢN PHẨM MỚI NHẤT</span>
+      </div>
+      <div style="clear: both"></div>
+      <div class="body-sanphammoinhat">
+          <div *ngFor="let product of products; index as i">
+
+            <div *ngIf="i < 8 then push">
+                
+            </div>
+            <ng-template #push>
+                <div *ngIf="((i + 1) % 4 == 0) then clearStyle else showProduct">
+
+                </div> 
+            </ng-template>
+            <ng-template #showProduct>
+                <div class="sanpham-sanphammoinhat" >
+                    <img class="img-sanphammoinhat" src="https://storage.stdio.vn/vn.stdio.electronics{{products[i].thumbnails}}" alt="hinh">
+                    <div class="ten-sanphammoinhat">
+                        <p>{{products[i].title}}</p>
+                    </div>
+                    <div class="gia-sanphammoinhat">
+                        <p>{{products[i].price}}</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #clearStyle>
+                <div class="sanpham-sanphammoinhat2">
+                    <img class="img-sanphammoinhat" src="https://storage.stdio.vn/vn.stdio.electronics{{products[i].thumbnails}}" alt="hinh">
+                    <div class="ten-sanphammoinhat">
+                        <p>{{products[i].title}}</p>
+                    </div>
+                    <div class="gia-sanphammoinhat">
+                        <p>{{products[i].price}}</p>
+                    </div>
+                </div>
+                <div style="clear: both"></div>
+            </ng-template>
+          </div>
+      </div>
+  </div>
+</div>

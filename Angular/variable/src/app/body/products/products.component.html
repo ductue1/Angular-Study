@@ -1,0 +1,66 @@
+<app-product-item [product]='products[0]'></app-product-item>
+<app-product-item [product]='products[1]'></app-product-item>
+<app-product-item [product]='products[2]'></app-product-item>
+<p *ngIf="students.length > 0">
+    {{students[0]}}
+</p>
+<hr>
+<div *ngIf="students.length > 0 then haveStudents else noStudent">
+
+</div>
+<ng-template #haveStudents>
+        There are {{students.length}} students
+</ng-template>
+<ng-template #noStudent>
+    There are no student
+</ng-template> 
+<div [ngSwitch]="mode">
+    <div *ngSwitchCase="'view'">View mode</div>
+    <div *ngSwitchCase="'edit'">Edit mode</div>
+    <div *ngSwitchDefault>Default mode</div>
+</div>
+<table>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+        <tr *ngFor="let student of students; index as i">
+            <td>{{i}}</td>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+
+<div id="AddProduct">
+    <h3>Add new product</h3>
+    <label>Name:</label>
+    <input #txtName type="text" id="txtName">
+    <label>Price:</label>
+    <input #txtPrice type="text" id="txtPrice">
+    <label>Image URL:</label>
+    <input #txtUrl type="Image URL" id="txtUrl">
+    <button type="submit" (click)="OnClick(txtName.value, txtPrice.value, txtUrl.value)">Submit</button>
+</div>
+
+<table>
+    <tbody>
+        <tr *ngFor="let pro of products2; index as i">
+            <td>{{i}}</td>
+            <td>{{pro.name}}</td>
+            <td>{{pro.price}}</td>
+            <td>
+                <img src="./assets/{{pro.url}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
