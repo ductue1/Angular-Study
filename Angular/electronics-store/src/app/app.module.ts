@@ -14,6 +14,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProductsComponent } from './products/products.component';
 import { IndexComponent } from './index/index.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductsService } from './products.service';
+import { CartService } from './cart.service';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -40,7 +42,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductsService,
+    CartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

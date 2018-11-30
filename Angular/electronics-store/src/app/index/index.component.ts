@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-
-import { ProductsComponent } from '../products/products.component';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-index',
@@ -12,14 +10,13 @@ export class IndexComponent implements OnInit {
 
   products = null;
 
-  constructor(private http: HttpClient) {
+  constructor(private productService : ProductsService) {
   }
 
   getProducts(){
-    this.http.get("https://apps.stdio.vn/vn.stdio.electronics/products")
-             .subscribe((response: any) => {
+    this.productService.getProducts().subscribe((response: any) => {
        this.products = response;
-    })
+    });
   }
 
   ngOnInit() {
