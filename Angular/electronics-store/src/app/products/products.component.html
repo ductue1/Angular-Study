@@ -4,7 +4,7 @@
           <h2 id="name"> {{ product.title }} </h2>
           <p id="price"> {{ product.price }} </p>
           <div class="quantity"><input #cartQuantity class="soluong" type="number" value="1"></div>
-          <div class="addToCart"><a (click)="AddToCart(product.id, cartQuantity.value);">THÊM VÀO GIỎ</a></div>
+          <div class="addToCart"><a href="javascript:;" (click)="AddToCart(product.id, cartQuantity.value);">THÊM VÀO GIỎ</a></div>
           <div style="clear: both"></div>
           <br><br>
           <hr class="line">

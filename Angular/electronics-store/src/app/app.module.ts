@@ -16,6 +16,7 @@ import { IndexComponent } from './index/index.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductsService } from './products.service';
 import { CartService } from './cart.service';
+import { CartitemComponent } from './cart/cartitem/cartitem.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
     ContactComponent,
     ProductsComponent,
     IndexComponent,
-    CartComponent
+    CartComponent,
+    CartitemComponent
   ],
   imports: [
     BrowserModule,

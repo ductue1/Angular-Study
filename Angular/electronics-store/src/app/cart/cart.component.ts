@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,9 +11,9 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   myCart = {}
   myArr = []
-  myCartItem = []
+  totalPrice = 0
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private route: ActivatedRoute, private productService : ProductsService) {
 
    }
 
@@ -26,11 +28,14 @@ export class CartComponent implements OnInit {
 
   DictionaryToArray() {
     for(var item in this.myCart) {
-      this.myArr.push(item);
+      let id = item;
+      this.productService.getProductById(id).subscribe(response => {
+        this.myArr.push(response);
+      });
     }
   }
 
-  getCartItem() {
-    
+  getToTalPrice(price) {
+    this.totalPrice += price;
   }
 }

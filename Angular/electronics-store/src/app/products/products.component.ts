@@ -19,7 +19,6 @@ export class ProductsComponent implements OnInit {
       let id = params['id'];
       this.productService.getProductById(id).subscribe(response => {
         this.product = response;
-        console.log(response);
       });
     });
   }
